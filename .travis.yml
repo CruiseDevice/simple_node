@@ -16,9 +16,9 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t simple_node .
-  - docker tag simple-node cruisedevice/simple-node:latest
+  - docker tag simple_node cruisedevice/simple_node:latest
 
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKET_USERNAME" --password-stdin
-  - docker push cruisedevice/simple-node
+  - docker push cruisedevice/simple_node
